@@ -1,19 +1,32 @@
 :root{
-    --qr-bg-color:hsl(0, 0%, 100%);
     --background: hsl(212, 45%, 89%);
-    --qr-body-text-color: hsl(216, 15%, 48%);
-    --qr-heading-text-color: hsl(218, 44%, 22%);
+    --qr-bg-color:hsl(0, 0%, 100%);
+    --qr-body-color: hsl(216, 15%, 48%);
+    --qr-heading-color: hsl(218, 44%, 22%);
 
     --paragraph-font-size: 15px;
+    --outfit-regular: 400;
+    --outfit-bold: 700;
 
     --radius: 12px;
 }
+
+.box-shadow{
+    -webkit-box-shadow: 2px 20px 57px -4px rgba(31,50,81,0.29);
+    -moz-box-shadow: 2px 20px 57px -4px rgba(31,50,81,0.29);
+    box-shadow: 2px 20px 57px -4px rgba(31,50,81,0.29);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     min-height: 100vh;
     background: var(--background);
     display: flex;
@@ -22,49 +35,37 @@ body {
     align-items: center;
 }
 
-.outfit-regular,
-.outfit-bold{
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-.outfit-regular {
-    font-weight: 400;
-}
-.outfit-bold {
-    font-weight: 700;
-}
-
-.qr-container{
+main{
     display: flex;
     flex-direction: column;
-   place-items: center;
-   text-align: center;
-   background-color: var(--qr-bg-color);
-   border-radius: 15px;
-   padding: 15px 15px 25px 15px;
-   gap: 15px;
-   width: 18rem;
+    place-items: center;
+    text-align: center;
+    background-color: var(--qr-bg-color);
+    border-radius: 15px;
+    padding: 15px 15px 25px 15px;
+    gap: 15px;
+    width: 18rem;
 }
 
-#qr-image{
-    display: block;
+div, div>img, h1, p{ display: block; }
+
+div{
     max-width:100%;
     border-radius: var(--radius);
     & img{
         width:100%;
-        display: block;
         border-radius: var(--radius);
     }
 }
-#qr-heading-text{
-    display: block;
+
+h1{
     font-size: larger;
-    color: var(--qr-heading-text-color);
+    font-weight: var(--outfit-bold);
+    color: var(--qr-heading-color);
 }
-#qr-body-text{
-    display: block;
+
+p{
     font-size: var(--paragraph-font-size);
-    color: var(--qr-body-text-color);
+    font-weight: var(--outfit-regular);
+    color: var(--qr-body-color);
 }
